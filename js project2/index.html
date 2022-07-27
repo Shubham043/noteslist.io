@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restaurent website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- <h1 style="background-color: rgb(10, 21, 56) ; color: aliceblue;"><b>To Do list </b></h1> -->
+
+<body>
+    <div id="container">
+        <h1 style="background-color: rgb(10, 21, 56) ; color: aliceblue;"><b>To Do list </b></h1>
+        <input id="text" type="text" placeholder="type your todo">
+        <button id="btn"> Add </button>
+        <ul id="parentlist" class="listgroup">
+            <li  class="list"> Works </button> <button style="border: 3px solid green;" class="button" id="del"> Done</button>
+            </li>
+        </ul>
+    </div>
+    <script>
+        let addBtn = document.getElementById('btn')
+        addBtn.addEventListener('click', addWork);
+
+        function addWork(e) {
+
+            let input = document.getElementById('text').value
+            let newLi = document.createElement('li');const btn = document.createElement('button')
+        btn.id = 'del';
+        btn.style.border ='2px solid green';
+        btn.style.borderRadius="5px"
+        btn.style.marginLeft= '120px'
+        btn.textContent= 'Ⅹ'
+        btn.style.width= '30px'
+        // newLi.style.border= '2px solid pink'
+            newLi.className = 'list';
+            newLi.textContent = input ;
+            let parentList = document.getElementById('parentlist');
+            parentList.appendChild(newLi);
+            parentList.appendChild(btn);
+            document.getElementById('text').value = "";
+btn.addEventListener('click', function(){
+    newLi.remove();
+    btn.remove();
+})
+        }
+
+    </script>
+
+</body>
+
+</html>
